@@ -2,7 +2,7 @@
 
 # Flu-Prediction
 
-This project tem o objetivo de analisar o comportamento dos algoritmos de aprendizado de máquina na predição do vírus influenza. A partir dessa analise, concluir qual o melhor algortimo para fazer esse tipo de predição.
+This project aims to analyze the behavior of machine learning algorithms in the prediction of the influenza virus. From this analysis, conclude which is the best algorithm to make this type of prediction.
 
 ## Description
 
