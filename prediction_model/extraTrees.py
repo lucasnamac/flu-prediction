@@ -11,10 +11,14 @@ class ExtraTrees:
         print('Extra Trees', score)
         print("Average Accuracy: %0.2f (+/- %0.2f)" % (score.mean()*100, score.std() *100))
 
-        X_train,X_test,y_train,y_test = train_test_split(X,Y,test_size=0.3,random_state=50)
+        X_train,X_test,y_train,Y_test = train_test_split(X,Y,test_size=0.3,random_state=50)
 
         extraTrees.fit(X_train,y_train)
-        print('Score', extraTrees.score(X_test,y_test))
+        print('Score', extraTrees.score(X_test,Y_test))
 
         y_pred_ext = extraTrees.predict(X_test)
-        print('Extra Trees R2 score:', metrics.r2_score(y_test,y_pred_ext,multioutput='variance_weighted'))
+        
+        print('----- Metrics to Extra Trees-----')
+        print('R2 score:', metrics.r2_score(Y_test,y_pred_ext,multioutput='variance_weighted'))
+        print('Mean Absolute Error:', metrics.mean_absolute_error(Y_test, y_pred_ext))
+        print('Mean Squared Error:', metrics.mean_squared_error(Y_test,y_pred_ext))

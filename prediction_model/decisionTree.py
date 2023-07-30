@@ -2,6 +2,7 @@ from sklearn import tree
 from sklearn import metrics
 from sklearn.model_selection import cross_val_score, train_test_split
 
+
 class DecisionTree:
 
     def __init__(self, X, Y):
@@ -19,6 +20,10 @@ class DecisionTree:
         print('Score ', decisionTree.score(X_test,Y_test))
 
         y_pred_dtr = decisionTree.predict(X_test)
-        print('Decision Trees R2 score:', metrics.r2_score(Y_test,y_pred_dtr,multioutput='variance_weighted'))
+
+        print('----- Metrics to Decision Trees-----')
+        print('R2 score:', metrics.r2_score(Y_test,y_pred_dtr,multioutput='variance_weighted'))
+        print('Mean Absolute Error:', metrics.mean_absolute_error(Y_test, y_pred_dtr))
+        print('Mean Squared Error:', metrics.mean_squared_error(Y_test,y_pred_dtr))
         
 
