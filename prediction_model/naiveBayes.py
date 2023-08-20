@@ -19,11 +19,14 @@ class NaiveBayes:
         print('Naive Bayes', score)
         print("Average Accuracy: %0.2f (+/- %0.2f)" % (score.mean()*100, score.std() *100))
 
-        X_train,X_test,y_train,y_test = train_test_split(X,Y,test_size=0.3,random_state=50)
+        X_train,X_test,y_train,Y_test = train_test_split(X,Y,test_size=0.3,random_state=50)
         
         naiveBayes.fit(X_train,np.ravel(y_train, order='C'))
-        print('Score', naiveBayes.score(X_test,y_test))
+        print('Score', naiveBayes.score(X_test,Y_test))
 
-        y_pred_ext = naiveBayes.predict(X_test)
-        print('Naive Bayes R2 score:', metrics.r2_score(y_test,y_pred_ext,multioutput='variance_weighted'))
-        
+        y_pred_nb = naiveBayes.predict(X_test)
+
+        print('----- Metrics to Naive Bayes-------')
+        print('R2 score:', metrics.r2_score(Y_test,y_pred_nb,multioutput='variance_weighted'))
+        print('Mean Absolute Error:', metrics.mean_absolute_error(Y_test, y_pred_nb))
+        print('Mean Squared Error:', metrics.mean_squared_error(Y_test,y_pred_nb))

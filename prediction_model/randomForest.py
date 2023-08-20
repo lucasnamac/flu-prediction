@@ -19,6 +19,9 @@ class RandomForest:
         print('Score ', randomForest.score(X_test,Y_test))
 
         y_pred_rfr = randomForest.predict(X_test)
-        print('Random Forests R2 score:', metrics.r2_score(Y_test,y_pred_rfr,multioutput='variance_weighted'))
-        print('Random Forests MSE:', metrics.mean_squared_error(Y_test,y_pred_rfr))
+        
+        print('----- Metrics to Random Forest-----')
+        print('R2 score:', metrics.r2_score(Y_test,y_pred_rfr,multioutput='variance_weighted'))
+        print('Mean Absolute Error:', metrics.mean_absolute_error(Y_test, y_pred_rfr))
+        print('Mean Squared Error:', metrics.mean_squared_error(Y_test,y_pred_rfr))
 
