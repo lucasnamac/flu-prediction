@@ -87,4 +87,4 @@ This project is licensed under the [MIT] License - see the LICENSE.md file for d
 
 ## Acknowledgments
 
-This project was inspired on Koodli's work. It's can accessed by clicking [here](https://github.com/RK900/Flu-Prediction.git).
+This project was inspired on Koodli's work. It's can be accessed by clicking [here](https://github.com/RK900/Flu-Prediction.git).
